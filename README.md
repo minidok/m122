@@ -3,7 +3,23 @@
 Inhaltsübersicht
 
 ****
-
+- [Scripting mit Bash Shell](#scripting-mit-bash-shell)
+  - [Einführung in Scripting mit Bash](#einführung-in-scripting-mit-bash)
+  - [Alias: Abkürzungen für Befehle](#alias-abkürzungen-für-befehle)
+  - [Erster Script: welcome.sh](#erster-script-welcomesh)
+  - [Ablaufsteuerung von Scripts](#ablaufsteuerung-von-scripts)
+  - [Vergleiche](#vergleiche)
+    - [Verzweigung mit IF THEN ELSE](#verzweigung-mit-if-then-else)
+    - [Logische Operatoren](#logische-operatoren)
+    - [Script compare_number.sh](#script-compare_numbersh)
+  - [Schlaufen](#schlaufen)
+  - [Script md5_Loop](#script-md5_loop)
+- [Linux Kommandos](#linux-kommandos)
+  - [Dateien und Verzeichnisse](#dateien-und-verzeichnisse)
+  - [Verwendung von Dateinhalten](#verwendung-von-dateinhalten)
+  - [Verwaltung von Prozessen](#verwaltung-von-prozessen)
+  - [Kommandos die Ausgaben machen](#kommandos-die-ausgaben-machen)
+  - [Ausgaben von Kommandos steuern (streams)](#ausgaben-von-kommandos-steuern-streams)
 [TOC]
 
 ## Einführung in Scripting mit Bash
@@ -86,22 +102,22 @@ benutzer@bzu-deb-vm:~$
 
 ## Vergleiche
 
-|              Operator | Description                                                  |
-| --------------------: | :----------------------------------------------------------- |
-|          ! EXPRESSION | The EXPRESSION is false.                                     |
-|             -n STRING | The length of STRING is greater than zero.                   |
-|             -z STRING | The lengh of STRING is zero (ie it is empty).                |
-|     STRING1 = STRING2 | STRING1 is equal to STRING2                                  |
-|    STRING1 != STRING2 | STRING1 is not equal to STRING2                              |
-| INTEGER1 -eq INTEGER2 | INTEGER1 is numerically equal to INTEGER2                    |
-| INTEGER1 -gt INTEGER2 | INTEGER1 is numerically greater than INTEGER2                |
-| INTEGER1 -lt INTEGER2 | INTEGER1 is numerically less than INTEGER2                   |
-|               -d FILE | FILE exists and is a directory.                              |
-|               -e FILE | FILE exists.                                                 |
-|               -r FILE | FILE exists and the read permission is granted.              |
+|              Operator | Description                                                           |
+| --------------------: | :-------------------------------------------------------------------- |
+|          ! EXPRESSION | The EXPRESSION is false.                                              |
+|             -n STRING | The length of STRING is greater than zero.                            |
+|             -z STRING | The lengh of STRING is zero (ie it is empty).                         |
+|     STRING1 = STRING2 | STRING1 is equal to STRING2                                           |
+|    STRING1 != STRING2 | STRING1 is not equal to STRING2                                       |
+| INTEGER1 -eq INTEGER2 | INTEGER1 is numerically equal to INTEGER2                             |
+| INTEGER1 -gt INTEGER2 | INTEGER1 is numerically greater than INTEGER2                         |
+| INTEGER1 -lt INTEGER2 | INTEGER1 is numerically less than INTEGER2                            |
+|               -d FILE | FILE exists and is a directory.                                       |
+|               -e FILE | FILE exists.                                                          |
+|               -r FILE | FILE exists and the read permission is granted.                       |
 |               -s FILE | FILE exists and it's size is greater than zero (ie. it is not empty). |
-|               -w FILE | FILE exists and the write permission is granted.             |
-|               -x FILE | FILE exists and the execute permission is granted.           |
+|               -w FILE | FILE exists and the write permission is granted.                      |
+|               -x FILE | FILE exists and the execute permission is granted.                    |
 
 Folgendes Beispiel für je einen Vergleiche
 
@@ -231,67 +247,67 @@ command *[options]*  <parameter>
 
 ## Dateien und Verzeichnisse
 
-| Kommando                 | Beschreibung                                                 |
-| ------------------------ | ------------------------------------------------------------ |
-| **cd** <folder>          | In Verzeichnis <folder> wechseln                             |
-| **pwd**                  | Gibt aktuelles Verzeichnis aus                               |
-| **ls**                   | Listet den Inhalt des aktuellen Verzeichnis auf              |
-| **mkdir** <folder>       | Erstellt ein Verzeichnis mit dem Namen <folder>              |
-| **rmdir** <folder>       | Löscht ein Verzeichnis <folder>                              |
-| **cp** <source> <target> | Kopiert eine Datei von <source> nach <target>                |
-| **mv** <source> <target> | Verschiebt eine Datei von <source> nach <target>             |
+| Kommando                 | Beschreibung                                                                                                   |
+| ------------------------ | -------------------------------------------------------------------------------------------------------------- |
+| **cd** <folder>          | In Verzeichnis <folder> wechseln                                                                               |
+| **pwd**                  | Gibt aktuelles Verzeichnis aus                                                                                 |
+| **ls**                   | Listet den Inhalt des aktuellen Verzeichnis auf                                                                |
+| **mkdir** <folder>       | Erstellt ein Verzeichnis mit dem Namen <folder>                                                                |
+| **rmdir** <folder>       | Löscht ein Verzeichnis <folder>                                                                                |
+| **cp** <source> <target> | Kopiert eine Datei von <source> nach <target>                                                                  |
+| **mv** <source> <target> | Verschiebt eine Datei von <source> nach <target>                                                               |
 | **touch** <file>         | Erstellt eine leere Datei <file> oder aktualisiert den Veränderungszeitpunkt, wenn die Datei bereits existiert |
-| **chmod** <flags> <file> | Ändert die Berechtigung auf der Datei <file> gemäss den Angaben <flags> |
-| **chown** <user> <file>  | Ändert den Eigentümer <user> für eine Datei <file>           |
-| **chgrp** <group> <file> | Ändert die Gruppe <group> für eine Datei <file>              |
+| **chmod** <flags> <file> | Ändert die Berechtigung auf der Datei <file> gemäss den Angaben <flags>                                        |
+| **chown** <user> <file>  | Ändert den Eigentümer <user> für eine Datei <file>                                                             |
+| **chgrp** <group> <file> | Ändert die Gruppe <group> für eine Datei <file>                                                                |
 
 ## Verwendung von Dateinhalten
 
-| Kommando        | Beschreibung                                                 |
-| --------------- | ------------------------------------------------------------ |
-| **cat** <file>  | Zeigt den Inhalt der Datei <file> auf standard output        |
-| **wc** <file>   | Zählt die Anzahl Wörter der Datei <file>                     |
+| Kommando        | Beschreibung                                                           |
+| --------------- | ---------------------------------------------------------------------- |
+| **cat** <file>  | Zeigt den Inhalt der Datei <file> auf standard output                  |
+| **wc** <file>   | Zählt die Anzahl Wörter der Datei <file>                               |
 | **file** <file> | Gibt den vom OS erkannten Dateityp für die angegebene Datei <file> aus |
-| **head** <file> | Gibt die ersten 10 Zeilen für die Datei <file> aus           |
-| **tail** <file> | Gibt die letzten 10 Zeilen für die Datei <file> aus          |
-| **less** <file> | Scrollt durch den Inhalt der Datei <file>, (Anzeige mit q verlassen) |
-| **sort** <file> | Sortiert die Textzeilen einer Datei alphabetisch             |
+| **head** <file> | Gibt die ersten 10 Zeilen für die Datei <file> aus                     |
+| **tail** <file> | Gibt die letzten 10 Zeilen für die Datei <file> aus                    |
+| **less** <file> | Scrollt durch den Inhalt der Datei <file>, (Anzeige mit q verlassen)   |
+| **sort** <file> | Sortiert die Textzeilen einer Datei alphabetisch                       |
 
 ## Verwaltung von Prozessen
 
-| Kommando       | Beschreibung                                                 |
-| -------------- | ------------------------------------------------------------ |
+| Kommando       | Beschreibung                                                                                          |
+| -------------- | ----------------------------------------------------------------------------------------------------- |
 | **ps**         | Listet alle Prozesse im Terminal für den aktuellen Benutzer auf.<br />Jeder Prozess hat eine Id <PID> |
-| **ps** ax      | Listet alle Prozesse für jeden Benutzer, die gerade ausgeführt werden |
-| **ps** e       | Zeigt neben dem Prozess die entsprechende Umgebung an        |
-| **kill** <PID> | Befehlt beendet einen Prozess, indem er das Signal SIGTERM an den Prozess <PID> sendet |
-| **fg**         | Bringt einen gestoppten oder in den Hintergrund gebrachten Job wieder in den Vodergrund |
-| **bg**         | Bringt einen gestoppten Job in den Hintergrund               |
-| **jobs**       | Listet alle Jobs auf                                         |
-| **top**        | Zeigt die Prozesse, welche im Moment die meiste CPU Zeit brauchen (Verlassen mit q) |
+| **ps** ax      | Listet alle Prozesse für jeden Benutzer, die gerade ausgeführt werden                                 |
+| **ps** e       | Zeigt neben dem Prozess die entsprechende Umgebung an                                                 |
+| **kill** <PID> | Befehlt beendet einen Prozess, indem er das Signal SIGTERM an den Prozess <PID> sendet                |
+| **fg**         | Bringt einen gestoppten oder in den Hintergrund gebrachten Job wieder in den Vodergrund               |
+| **bg**         | Bringt einen gestoppten Job in den Hintergrund                                                        |
+| **jobs**       | Listet alle Jobs auf                                                                                  |
+| **top**        | Zeigt die Prozesse, welche im Moment die meiste CPU Zeit brauchen (Verlassen mit q)                   |
 
 
 
 ## Kommandos die Ausgaben machen
 
-| Kommando          | Beschreibung                                                 |
-| ----------------- | ------------------------------------------------------------ |
-| **echo** <string> | Gibt Meldung <string> auf Standard output aus                |
-| **date**          | Gibt das aktuelle Systemdatum aus                            |
-| **who**           | Gibt eine Liste der eingeloggten Benutzer aus                |
+| Kommando          | Beschreibung                                                                                |
+| ----------------- | ------------------------------------------------------------------------------------------- |
+| **echo** <string> | Gibt Meldung <string> auf Standard output aus                                               |
+| **date**          | Gibt das aktuelle Systemdatum aus                                                           |
+| **who**           | Gibt eine Liste der eingeloggten Benutzer aus                                               |
 | **man** <command> | Zeigt die Hilfe und Beschreibung zu einem Befehl aus (Anzeige mit q verlassen, Suche mit /) |
-| **uptime**        | Zeigt, wie lange das System schon läuft                      |
-| **free** -h       | Zeigt die Grösse des ungenutzen Speichers für das System     |
-|                   |                                                              |
+| **uptime**        | Zeigt, wie lange das System schon läuft                                                     |
+| **free** -h       | Zeigt die Grösse des ungenutzen Speichers für das System                                    |
+|                   |                                                                                             |
 
 ## Ausgaben von Kommandos steuern (streams)
 
-| Steuerzeichen             | Beschreibung                                                 |
-| ------------------------- | ------------------------------------------------------------ |
-| command **>** file        | Standard output in Datei umleiten (überschreibt bestehende Datei <file>) |
-| command **>>** file       | Standard Output in Datei umleiten, an bestehende Datei <file> anhängen |
+| Steuerzeichen             | Beschreibung                                                                                 |
+| ------------------------- | -------------------------------------------------------------------------------------------- |
+| command **>** file        | Standard output in Datei umleiten (überschreibt bestehende Datei <file>)                     |
+| command **>>** file       | Standard Output in Datei umleiten, an bestehende Datei <file> anhängen                       |
 | command 2> file           | Standard Error Anzeige umleiten in Datei <file><br /> Mit "dev/null" wird Ausgabe verhindert |
-| command1 **\|** command 2 | Verbindet Ausgabe von Command1 mit Eingabe von Command2      |
-|                           |                                                              |
-|                           |                                                              |
+| command1 **\|** command 2 | Verbindet Ausgabe von Command1 mit Eingabe von Command2                                      |
+|                           |                                                                                              |
+|                           |                                                                                              |
 
