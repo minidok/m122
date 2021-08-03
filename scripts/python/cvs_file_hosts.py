@@ -1,4 +1,4 @@
-#!/usr/local/bin/python3
+#!/usr/bin/env python3
 
 import csv
 hosts = [["localhost","127.0.0.1"],["workstation.local", "192.168.1.100"],["server.domain", "10.2.100.1"]]
