@@ -4,7 +4,7 @@ import os
 from datetime import datetime
 
 def meineTestdatei(afile):
-    with open(afile, 'w') as txt_file:
+    with open(afile, 'w+) as txt_file:
         txt_file.write('TEST_DATA_STRING')
         txt_file.close()
     return afile
