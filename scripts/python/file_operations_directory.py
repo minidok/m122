@@ -2,6 +2,8 @@
 
 import os
 from datetime import datetime
+from posixpath import curdir
+
 
 def meineTestdatei(afile):
     with open(afile, 'w+') as txt_file:
@@ -18,5 +20,15 @@ def meineFunktion(afile):
         os.rename(afile, datetime.now().strftime("%S") +"renamedfile2.txt")
         print(os.path.getsize(meineTestdatei("anotherFile.txt")))
 
+
+def main():
+   
+    # Liste für Dateien Dateien
+    current_working_directory = os.getcwd()
+    for file in os.listdir(current_working_directory):
+        print(file)
+    
+
+
 if __name__ == "__main__":
-    meineFunktion("Testfile.txt")
+    main()
