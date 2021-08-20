@@ -53,7 +53,16 @@ Ein bestehender Alias kann bei Bedarf auch wieder entfernt werden mit:
 ~$ unalias ll
 ```
 
+## Find: Dateien und Ordner suchen
 
+Der einfachste Weg, Dateien unter Linux zu suchen, ist find. Find benötigt den Start-Ordner und den zu suchenden Datei- oder Ordnernamen:
+
+```bash
+~$ find /home -name dateidieichsuche.sh
+/home/benutzer/dateidieichsuche.sh
+```
+
+Suchen Sie die nach der Datei Welcome.sh in /home-Verzeichnis. Recherchieren Sie mir im manual (man find), wie Gross- und Kleinschreibung bei einer Suche mit find ignoriert werden können.
 
 ## Erster Script: welcome.sh
 
