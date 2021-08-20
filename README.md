@@ -64,6 +64,24 @@ Der einfachste Weg, Dateien unter Linux zu suchen, ist find. Find benötigt den 
 
 Suchen Sie die nach der Datei Welcome.sh in /home-Verzeichnis. Recherchieren Sie mir im manual (man find), wie Gross- und Kleinschreibung bei einer Suche mit find ignoriert werden können.
 
+## rm und mv: Löschen, verschieben und umbennenen
+
+Wenn Sie eine Datei umbennenen, "verschieben" Sie sie vom alten zum neuen Dateinamen
+
+```bash
+~$ mv dateidieichsuche.sh DateiDieSichSuche.sh
+```
+
+Eine Datei löschen Sie mir rm:
+```bash
+~$ rm DateiDieSichSuche.sh
+```
+
+Ein Ordner ist unter Linux eine Datei, die weitere Dateien beinhaltet. Einen Ordner löschen Sie darum mit -r was für "rekursiv" steht. rm -r löscht zuerst die Inhalte eines Ordners, danach den Ordner selbst.
+```bash
+~$ rm -r MeinOrdner
+```
+
 ## Erster Script: welcome.sh
 
 Führen sie folgende Befehle zur Erstellung des Scripts in der Linux Shell bash aus:
