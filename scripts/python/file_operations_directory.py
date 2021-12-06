@@ -23,7 +23,7 @@ def meineFunktion(afile):
 
 def main():
    
-    # Liste für Dateien Dateien
+    # Liste für Dateien
     current_working_directory = os.getcwd()
     for file in os.listdir(current_working_directory):
         print(file)

@@ -1,10 +1,10 @@
 # Simple SMTP client Testcases
-# 2021 Dominik Reuss#
+# 2021 Dominik Reuss
 #
 # Test do require a local SMTP Server connect to: 
 # i.e. run shell comman 'python -m smtpd -c DebuggingServer -n localhost:25'
 #
-# see pyhton doc for further configuration
+# see python doc for further configuration
 # https://docs.python.org/3/library/email.examples.html#email-examples
 
 #!/usr/bin/env python3
