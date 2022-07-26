@@ -24,11 +24,11 @@ Inhaltsübersicht
 
 ## Einführung in Scripting mit Bash
 
-Ein Script beinhaltet mehrere Kommandos, welche in einer genauen Seqeuenz abgearbeitet werden. Das bietet den Vorteil, das wir die eingesetzten Kommandos nicht mehr einzeln absetzen, sondern nur den einen Script aufrufen können.
+Ein Script beinhaltet mehrere Kommandos, welche in einer genauen Seqeuenz abgearbeitet werden. Das bietet den Vorteil, dass wir die eingesetzten Kommandos nicht mehr einzeln absetzen, sondern nur den einen Script aufrufen können.
 
-Das garantiert uns, dass der Ablauf immer exakt gleich ausgeführt wird.
+Es ist zudem garantiert, dass der Ablauf immer exakt gleich ausgeführt wird.
 
-Bevor wir einen ersten Script schreiben, noch eine Variante zur Vereinfachung einzelner Befehle
+Bevor wir einen ersten Script schreiben, noch eine Variante zur Vereinfachung einzelner Befehle:
 
 ## Alias: Abkürzungen für Befehle
 
