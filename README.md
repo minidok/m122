@@ -127,7 +127,7 @@ benutzer@bzu-deb-vm:~$
 
 ## Ablaufsteuerung von Scripts
 
-## Vergleiche
+## Vergleiche verwenden den Operator und sind erfüllt, wenn die Bedingung richtig ist.
 
 |              Operator | Description                                                           |
 | --------------------: | :-------------------------------------------------------------------- |
@@ -139,6 +139,7 @@ benutzer@bzu-deb-vm:~$
 | INTEGER1 -eq INTEGER2 | INTEGER1 is numerically equal to INTEGER2                             |
 | INTEGER1 -gt INTEGER2 | INTEGER1 is numerically greater than INTEGER2                         |
 | INTEGER1 -lt INTEGER2 | INTEGER1 is numerically less than INTEGER2                            |
+|       FILE1 -nt FILE2 | FILE1 is newer then FILE2
 |               -d FILE | FILE exists and is a directory.                                       |
 |               -e FILE | FILE exists.                                                          |
 |               -r FILE | FILE exists and the read permission is granted.                       |
@@ -225,6 +226,18 @@ else
 fi
 ```
 
+### Script Prüfen, ob eine Datei existert
+
+```bash
+#!/bin/bash
+file="datei.txt"
+
+if [ -f "$file" ]; then
+    echo "Die Datei $file ist eine gültige Datei."
+else
+    echo "Die Datei $file existiert nicht."
+fi
+```
 
 
 ## Schlaufen
