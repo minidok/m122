@@ -134,7 +134,7 @@ benutzer@bzu-deb-vm:~$
 |          ! EXPRESSION | The EXPRESSION is false.                                              |
 |             -n STRING | The length of STRING is greater than zero.                            |
 |             -z STRING | The lengh of STRING is zero (ie it is empty).                         |
-|     STRING1 = STRING2 | STRING1 is equal to STRING2                                           |
+|     STRING1 == STRING2 | STRING1 is equal to STRING2                                           |
 |    STRING1 != STRING2 | STRING1 is not equal to STRING2                                       |
 | INTEGER1 -eq INTEGER2 | INTEGER1 is numerically equal to INTEGER2                             |
 | INTEGER1 -gt INTEGER2 | INTEGER1 is numerically greater than INTEGER2                         |
@@ -160,7 +160,7 @@ Folgendes Beispiel für je einen Vergleiche
 
 Ist das Resultat so, wie erwartet? 
 
-Im Bash script entspricht 0 logisch True und 1 logisch False. Also genau umgekehrt, als man erwarten könnte!!
+Beachte: Im Bash script entspricht 0 logisch True und 1 logisch False. Also genau umgekehrt, als man das erwarten könnte!!
 
 Ein weiteres Beispiel als Script compare_cars.sh
 
