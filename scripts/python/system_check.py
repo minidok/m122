@@ -9,7 +9,7 @@ def check_disk_usage(disk):
     print(free_precentage)
     return free_precentage > 15
 
-def check_cpu_load():
+def check_cpu_load():   
     usage = psutil.cpu_percent(1)
     print(usage)
     return usage < 80
