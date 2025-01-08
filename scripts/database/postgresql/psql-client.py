@@ -2,17 +2,6 @@ import psycopg
 import psycopg_binary
 import configparser
 
-
-# Read credentials from a configuration file
-# database.ini has the following structure, built in key-value pairs:
-# [database]
-# dbname = postgres
-# user = postgres
-# password = 123456
-# host = 192.168.217.128
-# port = 5432
-# application_name = python_client
-
 config = configparser.ConfigParser()
 config.read('database.ini')
 
@@ -35,5 +24,3 @@ with psycopg.connect(**conn_params) as conn:
             print(f"Database: {database[0]}, Size: {database[1]}")
     cursor.close()
 conn.close()
-
-

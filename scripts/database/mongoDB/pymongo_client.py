@@ -4,7 +4,7 @@ import sys
 # Replace the placeholder data with your Atlas connection string. Be sure it includes
 # a valid username and password! Note that in a production environment,
 # you should not store your password in plain-text here.
-uri = "mongodb+srv://<user>:>password>@myatlasclusteredu.jxymz.mongodb.net/?retryWrites=true&w=majority&appName=myAtlasClusterEDU"
+uri = "mongodb+srv://bfsu_student:wOI4JY5AZLY82v5u@myatlasclusteredu.jxymz.mongodb.net/?retryWrites=true&w=majority&appName=myAtlasClusterEDU"
 
 try:
   client = pymongo.MongoClient(uri)
