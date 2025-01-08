@@ -1,5 +1,7 @@
-import configparser
 import psycopg
+import psycopg_binary
+import configparser
+
 
 # Read credentials from a configuration file
 # database.ini has the following structure, built in key-value pairs:
