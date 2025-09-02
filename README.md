@@ -141,7 +141,7 @@ benutzer@bzu-deb-vm:~$
 | INTEGER1 -lt INTEGER2 | INTEGER1 is numerically less than INTEGER2                            |
 |       FILE1 -nt FILE2 | FILE1 is newer then FILE2
 |               -d FILE | FILE exists and is a directory.                                       |
-|               -e FILE | FILE exists.                                                          |
+|               -f FILE | FILE exists.                                                          |
 |               -r FILE | FILE exists and the read permission is granted.                       |
 |               -s FILE | FILE exists and it's size is greater than zero (ie. it is not empty). |
 |               -w FILE | FILE exists and the write permission is granted.                      |
