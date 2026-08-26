@@ -20,7 +20,7 @@ Inhaltsübersicht
   - [Verwaltung von Prozessen](#verwaltung-von-prozessen)
   - [Kommandos die Ausgaben machen](#kommandos-die-ausgaben-machen)
   - [Ausgaben von Kommandos steuern (streams)](#ausgaben-von-kommandos-steuern-streams)
-[TOC]
+
 
 ## Einführung in Scripting mit Bash
 
@@ -56,13 +56,12 @@ Ein bestehender Alias kann bei Bedarf auch wieder entfernt werden mit:
 ## Find: Dateien und Ordner suchen
 
 Der einfachste Weg, Dateien unter Linux zu suchen, ist find. Find benötigt den Start-Ordner und den zu suchenden Datei- oder Ordnernamen:
+dateidieichsuche.sh so anpassen, dass diese gefunden werden kann.
 
 ```bash
 ~$ find /home -name dateidieichsuche.sh
-/home/benutzer/dateidieichsuche.sh
 ```
-
-Suchen Sie die nach der Datei Welcome.sh in /home-Verzeichnis. Recherchieren Sie mir im manual (man find), wie Gross- und Kleinschreibung bei einer Suche mit find ignoriert werden können.
+Suchen Sie die nach der Datei Welcome.sh in /home-Verzeichnis. Recherchieren Sie im manual (man find), wie Gross- und Kleinschreibung bei einer Suche mit find ignoriert werden können.
 
 ## rm und mv: Löschen, verschieben und umbennenen
 
